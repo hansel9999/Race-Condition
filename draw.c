@@ -19,20 +19,29 @@ void gauge(cairo_t *cr, double needle_position, char *text){
 	cairo_line_to(cr, HOR, VER+3);
 	cairo_fill(cr);
 
+	//redline
+	cairo_set_source_rgb(cr, 1.0, 0.0, 0.0);
+	cairo_arc(cr, HOR, VER, RAD+0.1, 0.0 - 2*(M_PI/10.0) , 0.0);
+	cairo_line_to(cr, HOR, VER+3);
+	cairo_fill(cr);
+	cairo_set_source_rgb(cr, 0.0, 0.0,0.0);
+	cairo_arc(cr, HOR, VER, RAD-6, -M_PI, M_PI);
+	cairo_line_to(cr, HOR, VER+3);
+	cairo_fill(cr);
 
 	//hash marks around edge
 	cairo_set_source_rgb(cr, 1.0, 1.0, 1.0);
 	cairo_set_line_width(cr, 2.5);
-	for(int i=0; i<8; i++){	
+	for(int i=0; i<11; i++){	
 		cairo_arc(cr, HOR, VER, RAD, -M_PI, -M_PI+X);
 		cairo_get_current_point(cr, &x, &y);
-		cairo_arc(cr, HOR, VER, RAD-10, -M_PI, -M_PI+X);
+		cairo_arc(cr, HOR, VER, RAD-6, -M_PI, -M_PI+X);
 		cairo_get_current_point(cr, &x1, &y1);
 		cairo_new_path(cr);
 		cairo_move_to(cr, x, y);
 		cairo_line_to(cr, x1, y1);
 		cairo_stroke(cr);
-		X += M_PI / 7.0;
+		X += M_PI / 10.0;
 	}
 
 	//needle

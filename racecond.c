@@ -28,7 +28,6 @@ int main (int argc, char *argv[]){
   draw2=GTK_WIDGET(gtk_builder_get_object(builder, "draw2"));
   draw3=GTK_WIDGET(gtk_builder_get_object(builder, "draw3"));
   
-  
   g_object_unref(builder);
 
   //show window
