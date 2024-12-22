@@ -3,4 +3,4 @@ Type=Application
 Name=Race Condition
 Icon=/usr/share/icons/hicolor/512x512/apps/racecond.png
 StartupNotify=false
-Exec=/bin/racecond
+Exec=/usr/local/bin/racecond
